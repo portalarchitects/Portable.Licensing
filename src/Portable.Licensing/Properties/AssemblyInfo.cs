@@ -24,7 +24,6 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 using System;
-using System.Resources;
 using System.Reflection;
 
 // General Information about an assembly is controlled through the following 
@@ -34,6 +33,9 @@ using System.Reflection;
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCulture("")]
-[assembly: NeutralResourcesLanguage("en")]
+
+#if !CORECLR
+[assembly: System.Resources.NeutralResourcesLanguage("en")]
+#endif
 
 [assembly: CLSCompliant(true)]

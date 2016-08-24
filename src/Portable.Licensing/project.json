@@ -18,7 +18,7 @@
 		}
 	},
 	"dependencies": {
-		"Portable.BouncyCastle": "1.8.1"
+		"Portable.BouncyCastle": "1.8.1.1"
 	},
 	"frameworks": {
 		"net451": {
@@ -36,8 +36,7 @@
 				}
 			}
 		},
-		"netstandard1.5": {
-			"imports": "dotnet",
+		"netstandard1.0": {
 			"buildOptions": {
 				"define": [
 					"CORECLR"
