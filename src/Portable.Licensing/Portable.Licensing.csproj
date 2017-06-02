@@ -6,6 +6,7 @@
     <VersionPrefix>1.1.1</VersionPrefix>
     <Authors>Nauck IT KG</Authors>
     <TargetFrameworks>netstandard1.0;net451</TargetFrameworks>
+    <TargetFrameworks Condition=" '$(OS)' != 'Windows_NT' ">netstandard1.0</TargetFrameworks>
     <AssemblyName>Portable.Licensing</AssemblyName>
     <PackageId>Portable.Licensing</PackageId>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
