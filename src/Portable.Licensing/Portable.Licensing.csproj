@@ -5,8 +5,7 @@
     <Description>A recursive descent LL(k) parser framework for .NET</Description>
     <Version>1.1.1</Version>
     <Authors>Nauck IT KG</Authors>
-    <TargetFrameworks>netstandard1.0;net451</TargetFrameworks>
-    <TargetFrameworks Condition=" '$(OS)' != 'Windows_NT' ">netstandard1.0</TargetFrameworks>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>Portable.Licensing</AssemblyName>
     <PackageId>Portable.Licensing</PackageId>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
@@ -17,26 +16,16 @@
     <PackageReference Include="Portable.BouncyCastle" Version="$(PortableBouncyCastle)" />
   </ItemGroup>
 
-  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.0' ">
-    <PackageReference Include="System.Runtime" Version="$(SystemRuntime)" />
-    <PackageReference Include="System.Runtime.Extensions" Version="$(SystemRuntimeExtensions)" />
-    <PackageReference Include="System.Xml.ReaderWriter" Version="$(SystemXmlReaderWriter)" />
-    <PackageReference Include="System.Xml.XDocument" Version="$(SystemXmlXDocument)" />
-  </ItemGroup>
-
-  <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard1.0' ">
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
     <DefineConstants>$(DefineConstants);CORECLR</DefineConstants>
     <DebugType>portable</DebugType>
   </PropertyGroup>
 
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net451' ">
+  <ItemGroup Condition=" '$(TargetFramework)' != 'netstandard2.0' ">
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Properties\" />
-  </ItemGroup>
 </Project>
