@@ -13,7 +13,7 @@
 
   <ItemGroup>
     <Compile Include="../CommonAssemblyInfo.cs" />
-    <PackageReference Include="Portable.BouncyCastle" Version="$(PortableBouncyCastle)" />
+    <PackageReference Include="Portable.BouncyCastle" Version="$(Portable_BouncyCastle)" />
   </ItemGroup>
 
   <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
