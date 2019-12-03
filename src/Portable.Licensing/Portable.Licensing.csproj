@@ -1,8 +1,28 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk" TreatAsLocalProperty="Version;Description;Authors;Copyright;AssemblyVersion;FileVersion;InformationalVersion;Product">
-  <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), deps.props))\deps.props" />
-
   <PropertyGroup>
-    <Description>A recursive descent LL(k) parser framework for .NET</Description>
+    <Description>
+      Portable.Licensing is a cross platform software licensing framework which allows you to
+      implement licensing into your application or library. It provides you all tools to create
+      and validate licenses for your software.
+
+      Portable.Licensing is using the latest military strength, state-of-the-art cryptographic algorithm
+      to ensure that your software and thus your intellectual property is protected.
+
+      It is targeting the Portable Class Library and thus runs on nearly every .NET/Mono profile
+      including Silverlight, Windows Phone, Windows Store App, Xamarin.iOS, Xamarin.Android, Xamarin.Mac
+      and XBox 360. Use it for your Desktop- (WinForms, WPF, etc.), Console-, Service-,
+      Web- (ASP.NET, MVC, etc.), Mobile (Xamarin.iOS, Xamarin.Android) or even LightSwitch applications.
+
+
+      FEATURES
+      - runs on .NET >= 4.0.3, Silverlight 5, Windows Phone >= 8, Windows Store Apps, Mono, Xamarin.iOS, Xamarin.Android, Xamarin.Mac, XBox 360
+      - easy creation and validation of your licenses
+      - trial, standard and subscription licenses
+      - cryptographic signed licenses, no alteration possible
+      - allows you to enable/disable program modules or product features
+      - limit various parameters for your software, e.g. max transactions, etc.
+      - add additional key/value pair attributes to your licenses
+      - easily extend the fluent validation API with extension methods</Description>
     <Version>1.1.1</Version>
     <Authors>Nauck IT KG</Authors>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -13,19 +33,10 @@
 
   <ItemGroup>
     <Compile Include="../CommonAssemblyInfo.cs" />
-    <PackageReference Include="Portable.BouncyCastle" Version="$(Portable_BouncyCastle)" />
+    <PackageReference Include="Portable.BouncyCastle" Version="1.8.5" />
   </ItemGroup>
 
   <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
     <DefineConstants>$(DefineConstants);CORECLR</DefineConstants>
-    <DebugType>portable</DebugType>
   </PropertyGroup>
-
-  <ItemGroup Condition=" '$(TargetFramework)' != 'netstandard2.0' ">
-    <Reference Include="System" />
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="Microsoft.CSharp" />
-  </ItemGroup>
-
 </Project>
